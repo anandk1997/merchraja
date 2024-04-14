@@ -1,0 +1,313 @@
+mat-grid-list mat-grid-tile:nth-child(1) {
+  background: #e1b111;
+}
+
+.navBar {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-right: 35px;
+}
+
+.navBar span {
+  font-family: var(--fontNavbar);
+  color: var(--black);
+  font-weight: 600;
+  font-size: var(--fontSize);
+}
+
+.navbarOptions {
+  display: flex;
+  gap: 25px;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+mat-grid-list mat-grid-tile:nth-child(2) {
+  border-bottom: 5px solid;
+  position: relative;
+  background: #e22e28;
+  overflow: visible;
+}
+
+::ng-deep
+  mat-grid-list
+  mat-grid-tile:nth-child(2)
+  .mat-grid-tile-content
+  > img:nth-child(1) {
+  position: absolute;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transform: scaleX(1.5);
+}
+
+.lowerNavbar {
+  display: flex;
+  z-index: 1;
+  width: 92%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lowerNavbar > span {
+  font-family: var(--fontlowerNavbar);
+  font-size: 40px;
+  color: #ed4444;
+}
+
+.navbarButtons {
+  display: flex;
+  font-family: var(--fontNavbar);
+  font-weight: 500;
+  color: white;
+  gap: 55px;
+  cursor: pointer;
+  width: 60%;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarIcons,
+.cartsWrapper,
+.heartsWrapper {
+  position: relative;
+  display: flex;
+}
+
+.navbarIcons img {
+  cursor: pointer;
+}
+
+.navbarIcons {
+  position: relative;
+  display: flex;
+}
+
+.navbarIcons {
+  gap: 25px;
+  padding-right: 45px;
+}
+
+.navbarButtons span:hover {
+  color: black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  height: 40px;
+  box-shadow: 1px 1px 0px 1px black;
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+  width: auto;
+  background: white;
+  border-radius: 21px;
+  padding: 0px 15px;
+}
+
+@mixin common {
+  fill: transparent;
+  stroke: black;
+  stroke-dashoffset: 83%;
+  stroke-dasharray: 83%;
+}
+
+.line {
+  fill: transparent;
+  stroke-dashoffset: 255%;
+  stroke-dasharray: 255%;
+  animation-name: dashOffset1, lineFill;
+  animation-duration: 5s, 0.8s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 0s, 3s;
+  animation-iteration-count: infinite, 1;
+}
+
+.m {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 3s, 4s;
+  animation-iteration-count: 1, 1;
+}
+
+.e {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 4s, 5s;
+  animation-iteration-count: 1, 1;
+}
+
+.r {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 5s, 6s;
+  animation-iteration-count: 1, 1;
+}
+
+.c {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 6s, 7s;
+  animation-iteration-count: 1, 1;
+}
+
+.h {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 8s, 9s;
+  animation-iteration-count: 1, 1;
+}
+
+.a {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 10s, 11s;
+  animation-iteration-count: 1, 1;
+}
+
+.R {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 11s, 12s;
+  animation-iteration-count: 1, 1;
+}
+
+.dot {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 750ms, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 12s, 13s;
+  animation-iteration-count: 4, 1;
+}
+
+.j {
+  @include common;
+  animation-name: dashOffset, animeFill;
+  animation-duration: 1s, 2s;
+  animation-timing-function: linear, linear;
+  animation-fill-mode: forwards, forwards;
+  animation-direction: alternate, forwards;
+  animation-delay: 13s, 14s;
+  animation-iteration-count: 1, 1;
+}
+
+@keyframes dashOffset {
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+
+@keyframes dashOffset1 {
+  100% {
+    stroke-dashoffset: 0%;
+    stroke-dasharray: 0%;
+  }
+}
+
+@keyframes animeFill {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: black;
+  }
+}
+@keyframes lineFill {
+  0% {
+    fill: transparent;
+  }
+  100% {
+    fill: #ffc913;
+  }
+}
+
+::ng-deep mat-grid-list mat-grid-tile:nth-child(1) {
+  height: 38px !important;
+}
+::ng-deep mat-grid-list.navbar mat-grid-tile:nth-child(2) {
+  top: calc(38px) !important;
+  height: calc(90px) !important;
+}
+
+.dropdown {
+  position: absolute;
+  right: 145px;
+  bottom: -205px;
+  background: white;
+  z-index: 1;
+  border-radius: 5px;
+  width: 13%;
+  font-size: 1.2em;
+  height: 30svh;
+  display: flex;
+  font-family: "Montserrat";
+  box-shadow: 0px 1px 3px 1px black;
+  flex-direction: column;
+  font-weight: 500;
+}
+.dropdown > div:nth-child(5):hover {
+  background: white;
+}
+
+.dropdown > div:not(:nth-child(5)):hover {
+  background: red;
+  width: 100%;
+  > span {
+    color: white;
+    cursor: pointer;
+  }
+}
+.dropdown > div {
+  margin-top: 15px;
+}
+.dropdown > div > span {
+  padding: 20px;
+}
+
+.button {
+  width: 6svw;
+  margin-left: 15px;
+  color: white;
+  text-align: center;
+  background: red;
+  border-radius: 19px;
+  line-height: 2svw;
+  height: 2svw;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  box-shadow: 2px 2px 0px 0px black;
+}

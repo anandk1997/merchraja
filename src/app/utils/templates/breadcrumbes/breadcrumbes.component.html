@@ -1,0 +1,13 @@
+<ol class="breadcrumb">
+  @for (breadcrumb of breadcrumbs; track breadcrumb.url; let last = $last) {
+    <li>
+      <span
+        [routerLink]="breadcrumb.url"
+        routerLinkActive="router-link-active"
+        [ngClass]="{ 'last-span': last }"
+      >
+        {{ breadcrumb.label }}
+      </span>
+    </li>
+  }
+</ol>

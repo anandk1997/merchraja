@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rowHeight="53px" guttersize="10px">
+  <mat-grid-tile colspan="2" rowspan="1">
+    <div>
+      <span>Instant Discount Offer</span>
+      <span>Instant Discount Offer</span>
+      <span>Instant Discount Offer</span>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" rowspan="1">
+    <div class="logoContainer">
+      <div>
+        <div class="menuButtons">
+          @for (item of [1, 2, 3]; track $index) {
+            <span></span>
+          }
+        </div>
+        <div>Menu</div>
+      </div>
+      <div>
+        <img src="../../../../assets/Logo_Screen_horizontal Logo.svg" alt="" />
+      </div>
+      <div class="">
+        <img
+          src="../../../../assets/profile.svg"
+          height="25px"
+          style="padding-bottom: 5px"
+          alt=""
+        />
+        <div>Login</div>
+      </div>
+    </div>
+    <div class="searchContainer">
+      <input type="text" />
+      <img src="../../../../assets/searchIcon.svg" alt="" srcset="" />
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

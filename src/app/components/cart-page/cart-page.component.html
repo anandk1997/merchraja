@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="menu">
+    @for (item of items; track items) {
+      <div class="menu-item" [ngClass]="{ selected: item.type === 'My Cart' }">
+        <div class="item-details">
+          <h2>{{ item.type }}</h2>
+          @if (
+            item.type === "My Cart" ||
+            item.type === "Address" ||
+            item.type === "Payment"
+          ) {
+            <div class="item-line"></div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+  <hr />
+  <div class="inner-container">
+    <div class="leftInner">
+      @for (item of cartItems; track cartItems; let i = $index) {
+        <div class="card">
+          <div class="card-image">
+            <img [src]="item.imageUrl" alt="Item Image" class="" />
+          </div>
+          <div class="card-content">
+            <div class="delete-icon" (click)="removeItem(i)">
+              <mat-icon>delete</mat-icon>
+            </div>
+            <h2>{{ item.title }}</h2>
+            <p>
+              {{ item.price }}&nbsp;&nbsp; <s>{{ item.originalPrrize }}</s>
+            </p>
+            <div class="dropdownOuter">
+              <select id="sortingSelector1">
+                <option value="4">
+                  Size: <span style="color: black"> XL</span>
+                </option>
+              </select>
+              <select id="sortingSelector2">
+                <option value="4">
+                  Qty:<span style="color: black"> 1</span>
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="rightInner">
+      <div class="card">
+        <div class="cardInner">
+          <input type="text" placeholder="Enter Coupon Code" />
+          <button type="submit">Apply Coupon</button>
+        </div>
+        <div class="cardInnerTwo">
+          <div class="bill">
+            @for (item of CartBill; track CartBill) {
+              <div class="menu-item">
+                <p>Cart Total</p>
+                <div class="line" style="border-bottom: 1px solid #a9a9a9">
+                  <p>{{ item.type }}</p>
+                  <p>{{ calculateTotalPrice() }}</p>
+                </div>
+                <div class="line" style="border-bottom: 1px solid #a9a9a9">
+                  <p>{{ item.describe }}</p>
+                  <p>{{ item.addGst }}</p>
+                </div>
+                <div class="line" style="border-bottom: 1px solid #a9a9a9">
+                  <p>{{ item.getShipping }}</p>
+                  <p>{{ item.ShippingCharge }}</p>
+                </div>
+                <div class="line">
+                  <p>{{ item.total }}</p>
+                  <p>{{ calculateFinalTotal() | currency: "INR" }}</p>
+                </div>
+              </div>
+            }
+            <button type="submit" (click)="openDialogbox()">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="simlarProduct">You May Also Like</h2>
+<div class="card-container">
+  @for (item of CategoryItem; track CategoryItem; let i = $index) {
+    <div class="categoryItem">
+      <div
+        class="categoryItemInner"
+        [ngStyle]="{
+          'background-color': $last ? '#F7FF6D' : getBackgroundColor(i)
+        }"
+      >
+        <span class="likeButton" (click)="addWishList(i + 1)">
+          <svg
+            width="22"
+            height="20"
+            viewBox="0 0 22 `20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="wishlistcard"
+          >
+            <path
+              d="M6 1C3.239 1 1 3.216 1 5.95C1 8.157 1.875 13.395 10.488 18.69C10.6423 18.7839 10.8194 18.8335 11 18.8335C11.1806 18.8335 11.3577 18.7839 11.512 18.69C20.125 13.395 21 8.157 21 5.95C21 3.216 18.761 1 16 1C13.239 1 11 4 11 4C11 4 8.761 1 6 1Z"
+              stroke="#302F2F"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <img [src]="item.imageUrl" alt="" />
+      </div>
+      <div class="categoryItemText">
+        <p class="ItemText1">{{ item.title }}</p>
+        <p class="ItemText2">{{ item.Influncer }}</p>
+        <p class="ItemText3">
+          {{ item.price }}&nbsp;&nbsp;<s>{{ item.originalPrrize }}</s
+          >&nbsp;&nbsp;<b>{{ item.off }}</b>
+        </p>
+
+        <div class="ratings">
+          @for (item of [1, 2, 3, 4, 5]; track $index) {
+            <img
+              class="ratingImg"
+              (click)="addRating($index)"
+              src="../../../assets/star.svg"
+              alt=""
+            />
+          }
+          <p>(150)</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>

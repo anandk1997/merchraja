@@ -1,0 +1,30 @@
+.container {
+  background: black;
+  height: 44svw;
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    height: 70svw;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+  .container {
+    background: black;
+    height: 33svw;
+  }
+}
+
+.slide {
+  position: relative;
+  height: 100%;
+  left: 0;
+  display: flex;
+  transition: all 1s;
+  img {
+    height: 100%;
+    width: 100svw;
+    object-fit: fill;
+  }
+}

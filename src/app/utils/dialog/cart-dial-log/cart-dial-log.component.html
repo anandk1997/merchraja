@@ -1,0 +1,218 @@
+<div class="popup">
+  <div class="popup-header">
+    <h2>Add New Address</h2>
+    <div class="close-icon" (click)="close()">
+      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+          fill="white"
+        />
+      </svg>
+    </div>
+  </div>
+  <hr class="popupLine" />
+  <form [formGroup]="AddressForm" (ngSubmit)="submitForm()">
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">First Name<sup>*</sup></span>
+        <input
+          id="firstName"
+          formControlName="firstName"
+          type="text"
+          placeholder="E.g: John"
+          required
+        />
+        @if (
+          AddressForm.get("firstName")?.invalid &&
+          AddressForm.get("firstName")?.touched
+        ) {
+          <span class="validation-message">Enter a valid first name.</span>
+        }
+      </div>
+      <div class="input__box">
+        <span class="details">Last Name<sup>*</sup></span>
+        <input
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          placeholder="E.g: Smith"
+          required
+        />
+        @if (
+          AddressForm.get("lastName")?.invalid &&
+          AddressForm.get("lastName")?.touched
+        ) {
+          <span class="validation-message">Enter a valid last name.</span>
+        }
+      </div>
+    </div>
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Address<sup>*</sup></span>
+        <input
+          type="text"
+          id="address"
+          formControlName="address"
+          placeholder="E.g: Mohali"
+          required
+        />
+        @if (
+          AddressForm.get("address")?.invalid &&
+          AddressForm.get("address")?.touched
+        ) {
+          <span class="validation-message">Enter a valid address.</span>
+        }
+      </div>
+    </div>
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Street/Apartment? Floor etc. (Optional)</span>
+        <input
+          type="text"
+          id="street"
+          formControlName="street"
+          placeholder="E.g: Mohali"
+        />
+        @if (
+          AddressForm.get("street")?.invalid &&
+          AddressForm.get("street")?.touched
+        ) {
+          <span class="validation-message">Enter a valid street .</span>
+        }
+      </div>
+    </div>
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Pincode<sup>*</sup></span>
+        <input
+          type="number"
+          id="pinecode"
+          formControlName="pinecode"
+          placeholder="E.g: 123456"
+          required
+        />
+        @if (
+          AddressForm.get("pinecode")?.invalid &&
+          AddressForm.get("pinecode")?.touched
+        ) {
+          <span class="validation-message">Enter a valid pinecode .</span>
+        }
+      </div>
+      <div class="input__box">
+        <span class="details">City/Town<sup>*</sup></span>
+        <input
+          type="text"
+          id="city"
+          formControlName="city"
+          placeholder="E.g: Mohali"
+          required
+        />
+        @if (
+          AddressForm.get("city")?.invalid && AddressForm.get("city")?.touched
+        ) {
+          <span class="validation-message">Enter a valid pinecode .</span>
+        }
+      </div>
+    </div>
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Phone Number<sup>*</sup></span>
+        <input
+          type="number"
+          id="number"
+          formControlName="number"
+          placeholder="012-345-6789"
+          required
+        />
+        @if (
+          AddressForm.get("number")?.invalid &&
+          AddressForm.get("number")?.touched
+        ) {
+          <span class="validation-message">Enter a valid Mobile Number .</span>
+        }
+      </div>
+    </div>
+    <div class="user__details">
+      <div class="input__box">
+        <span class="details">Email Address</span>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="E.g: abc@merchraja.com"
+        />
+        @if (
+          AddressForm.get("email")?.invalid && AddressForm.get("email")?.touched
+        ) {
+          <span class="validation-message">Enter a valid email .</span>
+        }
+      </div>
+    </div>
+    <div class="userDetails">
+      <div class="checkbox-box">
+        <label>
+          <input type="checkbox" formControlName="agreeTerms" />&nbsp;&nbsp;
+          <span>Agree to Terms and Conditions<sup>*</sup></span>
+          @if (
+            AddressForm.get("agreeTerms")?.invalid &&
+            AddressForm.get("agreeTerms")?.touched
+          ) {
+            <span class="validation-message"
+              >checkbox is required agreeTerms .</span
+            >
+          }
+        </label>
+      </div>
+    </div>
+    <div class="button-container">
+      <button
+        type="submit"
+        (click)="nextInput('popup,orderSummary')"
+        [disabled]="!AddressForm.valid"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+<div class="orderSummary">
+  <div class="cartDailbox">
+    <div class="popup-header">
+      <h2>Order Summary</h2>
+      <div class="close-icon" (click)="close()">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </div>
+    <hr class="popupLine" style="margin-bottom: 30px" />
+    <div class="Summary">
+      @for (item of CartBill; track CartBill) {
+        <div class="menu-item">
+          <div class="line" style="border-bottom: 1px solid #a9a9a9">
+            <p>{{ item.type }}</p>
+            <p>{{ item.price }}</p>
+          </div>
+          <div class="line" style="border-bottom: 1px solid #a9a9a9">
+            <p>{{ item.describe }}</p>
+            <p>{{ item.addGst }}</p>
+          </div>
+          <div class="line" style="border-bottom: 1px solid #a9a9a9">
+            <p>{{ item.getShipping }}</p>
+            <p>{{ item.ShippingCharge }}</p>
+          </div>
+          <div class="line">
+            <p>{{ item.total }}</p>
+            <p>{{ item.price }}</p>
+          </div>
+        </div>
+      }
+      <button type="submit" (click)="openOrderConfirmationPage()">
+        Continue To Payment
+      </button>
+    </div>
+  </div>
+</div>

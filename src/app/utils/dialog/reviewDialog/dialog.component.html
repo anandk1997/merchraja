@@ -1,0 +1,62 @@
+<div class="dialog">
+  <span>Select Ratings :</span>
+  <div class="star">
+    @for (item of [1, 2, 3, 4, 5]; track $index) {
+      <img
+        class="ratingImg dialogStar"
+        (click)="addRating($index, 'dialogStar', 'dialog,inputTitle')"
+        src="../../../assets/hollowstar.svg"
+        alt=""
+      />
+    }
+  </div>
+</div>
+<form [formGroup]="imputForm" class="inputTitle">
+  <span class="fontMontserrat" style="font-size: 24px">Write a title</span>
+  <input type="text" formControlName="text" />
+  @if (imputForm.dirty && imputForm.invalid) {
+    <span style="color: #ed4444"
+      >Arrr matey! No need for alphabet soup here, try again!</span
+    >
+  }
+  <button
+    type="button"
+    [disabled]="imputForm.invalid"
+    (click)="nextInput('inputTitle,fileUpload')"
+    class="shadowButton"
+  >
+    Submit
+  </button>
+</form>
+<div class="fileUpload">
+  <span class="fontMontserrat" style="font-size: 24px; margin-right: 13.5svw"
+    >Attach a photo or video :</span
+  >
+  <div class="fileUploadBox">
+    <img src="../../../../assets/34-Add-image.svg" height="65px" alt="" />
+    <div
+      class="shadowButton fontMontserrat"
+      style="font-size: 18px; color: white !important"
+      (click)="openFileExplorer('fileUpload,writeReview')"
+    >
+      Add Files
+    </div>
+  </div>
+  <span class="fontMontserrat" (click)="nextInput('fileUpload,writeReview')"
+    >Skip</span
+  >
+</div>
+<div class="writeReview">
+  <span class="fontMontserrat" style="font-size: 24px; margin-right: 18.5svw"
+    >Write a Review :</span
+  >
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <button
+    type="button"
+    (click)="close()"
+    class="shadowButton fontMontserrat"
+    style="font-size: 18px; color: white !important; margin-right: -24svw"
+  >
+    Submit
+  </button>
+</div>

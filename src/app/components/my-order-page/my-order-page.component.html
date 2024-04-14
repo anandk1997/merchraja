@@ -1,0 +1,156 @@
+<app-navbar></app-navbar>
+<div class="myOrderOuter">
+  <div class="SideBarMenu">
+    <p>Account</p>
+    <p>Account Holder Name</p>
+    <p>Account Dashboard</p>
+    <button>My Orders</button>
+    <p>My Orders and Returns</p>
+    <p>Wishlist</p>
+    <p>Coupons</p>
+    <p>Logout</p>
+    <p>Profile Information</p>
+    <p>Manage Addresses</p>
+  </div>
+  <div class="orderDetails">
+    <p>All Orders</p>
+    <div class="orderDetailsInner">
+      @for (item of paginatedOrderStatus; track paginatedOrderStatus) {
+        <div
+          class="orderDetailsCart"
+          [ngClass]="{
+            delivered: item.status === 'Delivered',
+            Shipped: item.status === 'Shipped',
+            'Out For Delivery': item.status === 'OutForDelivery',
+            'Awaiting Confirmation': item.status === 'Awaiting Confirmation',
+            Cancelled: item.status === 'Cancelled',
+            'Order Confirmed': item.status === 'Order Confirmed',
+            Processing: item.status === 'Processing',
+            'Return Requested': item.status === 'Return Requested',
+            'Picked Up': item.status === 'Picked Up',
+            Replaced: item.status === 'Replaced',
+            Refunded: item.status === 'Refunded'
+          }"
+        >
+          <div class="cartOne">
+            <img [src]="item.imageUrl" alt="" />
+            <div class="cartOneheader">
+              <p
+                [ngStyle]="{
+                  color: item.status === 'Cancelled' ? '#ED1C24' : '#46A01C'
+                }"
+              >
+                {{ item.status }}
+                @if (item.status === "Cancelled") {
+                  <p style="font-size: 13px">
+                    Unfortunately, we had to cancel your order as the delivery
+                    address provided was incorrect
+                    <span style="color: #46a01c; font-weight: 500"
+                      >Refund Initiated: </span
+                    > <span style="color: 1C1C1B; font-weight: bold">
+                      ₹999.00
+                    </span>
+                     on Fri, 30 Jan 2024. <span
+                      style="color: 1C1C1B; font-weight: bold"
+                    >
+                      View Refund details
+                    </span>
+                  </p>
+                } @else {
+                  <p>{{ item.date }}</p>
+                }
+              </p>
+              @if (
+                item.status === "Out For Delivery" ||
+                item.status === "Shipped" ||
+                item.status === "Return Requested" ||
+                item.status === "Awaiting Confirmation" ||
+                item.status === "Picked Up" ||
+                item.status === "Return Requested" ||
+                item.status === "Refunded" ||
+                item.status === "Order Confirmed"
+              ) {
+                <button>Track Order</button>
+              }
+            </div>
+          </div>
+          @if (
+            item.status === "Picked Up" ||
+            item.status === "Cancelled" ||
+            item.status === "Replaced" ||
+            item.status === "Return Requested" ||
+            item.status === "Refunded"
+          ) {
+            <hr
+              style="
+                padding-bottom: 20px;
+                border: none;
+                border-top: 1px solid gray;
+              "
+            />
+            <div class="cartOneContent">
+              <div class="orderItemInnerImage">
+                <img [src]="item.dressImage" alt="" />
+              </div>
+              <div class="orderItemInnerDetails">
+                <p>{{ item.dressDetails }}</p>
+                <p>{{ item.influencerName }}</p>
+                <p>{{ item.size }}</p>
+              </div>
+            </div>
+            <hr />
+          } @else {
+            <div class="cartOneContent">
+              <div class="orderItemInnerImage">
+                <img [src]="item.dressImage" alt="" />
+              </div>
+              <div class="orderItemInnerDetails">
+                <p>{{ item.dressDetails }}</p>
+                <p>{{ item.influencerName }}</p>
+                <p>{{ item.size }}</p>
+              </div>
+            </div>
+          }
+          @if (
+            item.status === "Delivered" ||
+            item.status === "Out For Delivery" ||
+            item.status === "Awaiting Confirmation" ||
+            item.status === "Shipped" ||
+            item.status === "Order Confirmed" ||
+            item.status === "Processing"
+          ) {
+            <hr />
+            <div class="cartOneUpperBottom">
+              <li>
+                <span>{{ item.Exchange }}</span>
+              </li>
+            </div>
+            <hr />
+          }
+          <div class="cartOneBottom">
+            <img [src]="item.ratting" alt="" />
+            <a href="#">{{ item.review }}</a>
+          </div>
+        </div>
+      }
+      <div class="paginatedOrder">
+        <button
+          [disabled]="currentPage === 1"
+          (click)="onPageChange(currentPage - 1)"
+        >
+          &lt; Previous
+        </button>
+        <span
+          >Showing {{ (currentPage - 1) * itemsPerPage + 1 }} Out Of
+          {{ orderStatus.length }}
+        </span>
+        <button
+          [disabled]="currentPage === totalPages.length"
+          (click)="onPageChange(currentPage + 1)"
+        >
+          Next &gt;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

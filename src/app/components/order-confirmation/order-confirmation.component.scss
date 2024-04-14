@@ -1,0 +1,137 @@
+.order-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #1c1c1b;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 8vw;
+}
+
+.orderConfirmation-header {
+  width: 100%;
+  padding: 30px;
+
+  h2 {
+    font-size: 32px;
+    font-family: var(--fontNavbar);
+    font-weight: 400;
+  }
+
+  hr {
+    color: #a9a9a9;
+  }
+}
+
+.order-confirmationMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 250px;
+    margin-top: -50px;
+  }
+
+  p {
+    color: red;
+    text-align: center;
+    font-size: 45px;
+    font-family: var(--fontNavbar);
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+}
+
+.order-confirmationPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+
+  .priceHeading {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px 10px 30px;
+    background-color: #ffff00;
+    border: 1px solid #1c1c1b;
+    border-radius: 7px;
+    width: 100%;
+  }
+
+  .priceHeading p {
+    font-weight: 300;
+    font-size: 32px;
+    font-family: var(--fontNavbar);
+  }
+  .itemDetails {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 30px;
+    margin-top: 40px;
+    font-size: 22px;
+    font-family: var(--fontNavbar);
+    margin-bottom: 18px;
+    padding-right: 50px;
+  }
+  .itemDetailsItems {
+    display: flex;
+    padding-left: 30px;
+    margin-bottom: 18px;
+    font-size: 22px;
+    font-family: var(--fontNavbar);
+    padding-right: 50px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .line {
+    color: #000;
+    width: 100%;
+    padding: 30px;
+    border: none;
+    border-top: 1px solid #a9a9a9;
+  }
+  .itemDetailsItem {
+    display: flex;
+    padding-left: 30px;
+    margin-top: -40px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: var(--fontNavbar);
+    padding-right: 50px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  h4 {
+    font-weight: 400;
+    margin-top: -30px;
+    font-size: 22px;
+    color: #e82323;
+    font-family: var(--fontNavbar);
+  }
+}
+.orderConfirmationButton {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.orderConfirmationButton button {
+  margin: 0 5px;
+  margin-bottom: 30px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  width: 23vw;
+  border: 1px solid #1c1c1b;
+  border-radius: 7px;
+  background-color: #e23028;
+  color: #ffffff;
+  font-size: 32px;
+  font-family: var(--fontNavbar);
+}

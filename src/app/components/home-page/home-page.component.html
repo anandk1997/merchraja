@@ -1,0 +1,192 @@
+<div class="container">
+  @defer {
+    <app-navbar></app-navbar>
+    <app-mobile-navbar></app-mobile-navbar>
+    <app-homepage-carousal></app-homepage-carousal>
+  }
+  <div id="featuredCategory" class="featuredCategory">
+    <div class="wrapper">
+      <span class="featuredCategoryHeader">Featured Categories</span>
+      <div class="featuredCategoryCarousal">
+        @for (
+          item of featuredCategories;
+          track featuredCategories;
+          let last = $last
+        ) {
+          <div class="circle">
+            <img [src]="item.img" alt="" />
+            <span>{{ item.name }}</span>
+          </div>
+        }
+      </div>
+    </div>
+    <img
+      class="prev"
+      (click)="prev()"
+      src="../../../assets/arrow 1.svg"
+      alt=""
+    />
+    <img (click)="next()" src="../../../assets/arrow 1.svg" alt="" />
+    <img src="../../../assets/Vector Smart Object 1.png" alt="" />
+  </div>
+  <div id="bestSellingProducts" class="bestSellingProducts">
+    <div class="divider">
+      <div class="topSection">
+        <span class="header">Best Selling Products</span>
+        <div>View All</div>
+      </div>
+      <div class="bottomSection">
+        <div>
+          @for (item of [1, 2, 3, 4, 5]; track $index) {
+            <div>
+              <div class="cards">
+                <img src="../../../assets/shirt.svg" alt="" />
+                <div><img src="../../../assets/heart.svg" alt="" /></div>
+              </div>
+              <div class="details">
+                <span>Half Cut Sleeve T-shirt</span>
+                <span>by Influncer name</span>
+                <div>
+                  <span>₹700</span><span>₹1400</span><span>50% Off</span>
+                </div>
+                <div class="stars">
+                  @for (item of [1, 2, 3, 4, 5]; track $index) {
+                    <img src="../../../assets/star.svg" alt="" srcset="" />
+                  }
+                  <span>(150)</span>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="topInfluencers" class="topInfluencers">
+    <img src="../../../assets/Group 1000006109.png" id="background" alt="" />
+    <div class="influncerGrid">
+      <div class="layer upper">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+      <div class="layer middle">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+      <div class="layer bottom">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+    </div>
+    <img src="../../../assets/blue background left.svg" alt="" />
+    <img src="../../../assets/blue background.svg" alt="" />
+    <img src="../../../assets/blue background bottom.svg" alt="" />
+    <span>Top</span>
+    <span>Influencers</span>
+    <div class="mobileGrid">
+      <div class="layerOne">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+      <div class="layerTwo">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+      <div class="layerThree">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+      <div class="layerFour">
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+        <div>
+          <div class="nametag" id="nametag">Name</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonial">
+    <img src="../../../assets/red bg svg-01 1.svg" alt="" />
+    <span>Our Lovely Clients</span>
+    <div class="cardsCarousal">
+      @for (item of carousalCard; track $index) {
+        <div class="card" style="z-index: 0">
+          <div>
+            <img
+              src="../../../assets/pexels-ali-pazani-2836486 2.jpg"
+              height="100%"
+              alt=""
+            />
+          </div>
+          <div class="cardStar">
+            @for (item of [1, 2, 3, 4, 5]; track $index) {
+              <img src="../../../assets/star.svg" alt="" />
+            }
+          </div>
+          <span>{{ item.summary }}</span>
+          <div class="name">{{ item.name }}</div>
+        </div>
+      }
+      <img (click)="prevCard()" src="../../../assets/whiteArrow.svg" alt="" />
+      <img (click)="nextCard()" src="../../../assets/whiteArrow.svg" alt="" />
+    </div>
+  </div>
+  <div class="signup">
+    <div class="signupContainer">
+      <div>
+        <img src="../../../assets/big background Logo.svg" alt="" />
+      </div>
+      <div>
+        <span>TIRED OF BEGGING BRANDS</span>
+        <div class="innerDiv">
+          <div class="line"></div>
+          <span>FOR</span>
+          <div class="line"></div>
+        </div>
+        <span>spOnsorshIp!?</span>
+        <div class="signupButton">
+          <div>
+            <a href="https://collaborations.merchraja.com/">
+              <span>Sign up, DUH</span></a
+            >
+            <img src="../../../assets/Up arrow.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

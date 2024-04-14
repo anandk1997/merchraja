@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="Left">
+    <div class="line"></div>
+    <img src="../../../assets/LogoIcon.svg" alt="nothing" />
+    <div class="buttonContainers">
+      <span>Don’t have an account?</span>
+      <div (click)="goToLogin()" class="button">
+        <span>SIGN UP</span>
+        <img src="../../../assets/arrowSideways.svg" alt="nothing" />
+      </div>
+      <span>Login as Partner!!</span>
+      <div class="button">
+        <span>Click here</span>
+        <img src="../../../assets/arrowSideways.svg" alt="nothing" />
+      </div>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class="Right">
+    <div class="login">
+      <div class="header">
+        <div class="smallLine"></div>
+        <span>Sign in</span>
+        <div class="smallLine"></div>
+      </div>
+      <div class="inputs">
+        <input type="email" placeholder="email" required />
+        <input type="password" placeholder="password" required />
+        <div class="bottomLine">
+          <div class="rememberMe">
+            <input type="checkbox" />
+            <span>Remember me</span>
+          </div>
+          <span>forgot password?</span>
+        </div>
+        <div (click)="goToPage()" class="button">
+          <span>ENTER</span>
+          <img src="../../../assets/arrowSideways.svg" alt="nothing" />
+        </div>
+        <div class="header marginFix">
+          <div class="smallLine"></div>
+          <span>OR</span>
+          <div class="smallLine"></div>
+        </div>
+        <div class="otherLogins">
+          <div class="facebook">
+            <img src="../../../assets/facebook.svg" alt="" />
+          </div>
+          <div class="google">
+            <img src="../../../assets/Google.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="signUp">
+      <div class="header">
+        <div class="smallLine"></div>
+        <span>Sign up</span>
+        <div class="smallLine"></div>
+      </div>
+      <div class="inputs">
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="email" required />
+        <input type="tel" placeholder="Phone number" required />
+        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Confirm password" required />
+        <div (click)="goToPage()" class="button">
+          <span>ENTER</span>
+          <img src="../../../assets/arrowSideways.svg" alt="nothing" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

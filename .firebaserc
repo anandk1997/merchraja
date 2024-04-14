@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "devevnchatak",
+    "dev": "devevnchatak",
+    "iprod": "merchinfluencer"
+  },
+  "targets": {
+    "devevnchatak": {
+      "hosting": {
+        "dev.chataksolutions.com": [
+          "dist"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

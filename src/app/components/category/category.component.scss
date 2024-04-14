@@ -1,0 +1,341 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 1.24%;
+  gap: 10px;
+}
+
+app-breadcrumbes {
+  display: flex;
+  width: 27%;
+  justify-content: center;
+}
+
+.category {
+  min-height: 50svh;
+  background: yellow;
+  position: relative;
+}
+.mobileViewContent {
+  display: none;
+}
+.categoryPreview {
+  background: transparent;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.categoryPreviewLeft {
+  position: relative;
+  width: 21%;
+  margin-left: 19.7vh;
+  justify-content: flex-start;
+  .categoryHeading {
+    font-size: 20px !important;
+    color: #1c1c1b;
+    font-weight: 500;
+  }
+  div:nth-child(2) {
+    font-size: 20px !important;
+    color: #1c1c1b;
+    font-weight: 700;
+    font-family: var(--fontNavbar) !important;
+  }
+  hr {
+    height: 0.5px;
+    background-color: gray;
+  }
+  .checkBoxsAndNames .input-label-pair {
+    display: flex;
+    margin-bottom: 13px !important;
+  }
+
+  .checkBoxsAndNames input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+  .checkBoxsAndNames label {
+    font-size: 17px !important;
+    color: black;
+    font-weight: 400;
+    font-family: var(--fontNavbar) !important;
+  }
+
+  .categoryProducts {
+    background-color: red;
+    height: 30px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    font-family: var(--fontNavbar);
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .checkBoxsAndRating .input-label-pair {
+    display: flex;
+  }
+
+  .checkBoxsAndRating input[type="checkbox"] {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    margin-top: 3px;
+  }
+}
+
+.categoryPreviewRight {
+  display: flex;
+  position: relative;
+  width: 75%;
+  margin-left: 13px;
+  margin-right: 19.7vh;
+  margin-top: 7.7vh;
+  justify-content: flex-start;
+
+  .catSelector {
+    justify-self: end;
+    position: absolute;
+    right: 10px;
+    margin-top: -55px;
+  }
+
+  select {
+    width: 32.5svh;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(--fontNavbar) !important;
+    border: 1px solid gray;
+    padding: 8px;
+    border-radius: 4px;
+    border-radius: 5px;
+    height: 35px;
+    margin-bottom: 15px;
+  }
+}
+.ab {
+  height: 200px;
+  background-color: #ffa0a0;
+}
+.card {
+  min-height: 30svh;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categoryItem {
+  margin: 10px;
+  width: calc(25% - 20px);
+
+  .categoryItemInner {
+    min-height: 10svh;
+    background: #ffa0a0;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 5px 5px 0px 0px black;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  span {
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    right: 13px;
+    background: white;
+    top: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      width: auto;
+      cursor: pointer;
+    }
+  }
+}
+
+.categoryItemText {
+  .ItemText1 {
+    font-family: var(--fontProduct);
+    font-size: 13px;
+    color: #333;
+    margin-top: 10px;
+  }
+  .ItemText2 {
+    display: flex;
+    align-items: center;
+    color: #1967d2;
+    text-decoration: underline;
+  }
+  .ItemText3 {
+    display: flex;
+    align-items: center;
+    color: red;
+  }
+
+  s {
+    color: gray;
+  }
+
+  b {
+    color: green;
+  }
+}
+
+.ratings {
+  display: flex;
+  gap: 1px;
+  height: 30px;
+  width: 20px;
+
+  p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .mobileViewContent {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    img {
+      height: 15px;
+    }
+    div:nth-child(1) {
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 20px;
+      font-family: var(--fontNavbar);
+      font-weight: 500;
+    }
+    div:nth-child(2) {
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+      border-left: 1px solid #000;
+      text-align: center;
+      font-size: 20px;
+      font-family: var(--fontNavbar);
+      font-weight: 500;
+    }
+    hr {
+      width: 90%;
+      margin: 4px 20px;
+    }
+  }
+
+  .categoryPreview {
+    width: 93%;
+    display: inline;
+    margin-left: 12px;
+    margin-right: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .categoryPreviewLeft {
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 50px;
+    .categoryProducts,
+    .checkBoxsAndNames,
+    p-slider,
+    .checkBoxsAndRating,
+    .products {
+      display: none;
+    }
+    hr {
+      width: 20%;
+    }
+    hr:nth-child(4) {
+      display: none;
+    }
+    div:nth-child(2) {
+      display: none;
+    }
+  }
+
+  .categoryHeading {
+    font-size: 20px !important;
+    color: #1c1c1b;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .categoryPreviewRight {
+    width: 100%;
+    margin: 0px;
+
+    .catSelector {
+      display: none;
+    }
+
+    .categoryItem {
+      width: calc(50% - 20px);
+
+      .categoryItemText {
+        .ItemText1 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 912px) {
+  .mobileViewContent {
+    display: none;
+  }
+  app-breadcrumbes {
+    justify-content: start;
+    margin-left: 30px;
+  }
+  .categoryPreview {
+    width: 100%;
+    display: flex;
+    .categoryPreviewLeft {
+      width: 25%;
+      margin-left: 30px;
+    }
+    .categoryPreviewRight {
+      margin-right: 30px;
+      width: 75%;
+      margin-top: 10.7vh;
+      .catSelector {
+        justify-self: end;
+        position: absolute;
+        right: 10px;
+        overflow: hidden;
+      }
+    }
+  }
+}
